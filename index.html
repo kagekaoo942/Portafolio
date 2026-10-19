@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio</title>
+  <meta name="description" content="Portafolio de Martín Acevedo, desarrollador fullstack. HTML, CSS, JavaScript, Python y Flask.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+  <div class="progress-bar" id="page-progress" aria-hidden="true"></div>
+  <div class="cursor-glow" id="pointer-glow" aria-hidden="true"></div>
+
+  <!-- ============ NAVEGACIÓN ============ -->
+  <header class="site-header" id="site-header">
+    <nav class="nav container" aria-label="Principal">
+      <a href="#inicio" class="logo">Portafolio<span>.</span></a>
+
+      <ul class="nav__links" id="primary-navigation">
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#extras">Extras</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <button class="icon-btn" id="theme-toggle" aria-label="Cambiar tema">
+          <span class="icon-sun" aria-hidden="true"><svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg></span><span class="icon-moon" aria-hidden="true"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5a8.5 8.5 0 1 0 12 12Z"></path></svg></span>
+        </button>
+        <button class="icon-btn mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+      <div class="grid-bg"></div>
+      <div class="blob blob--1"></div>
+      <div class="blob blob--2"></div>
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow reveal"><span class="dot"></span>Disponible · Fullstack</p>
+          <h1 class="reveal">Hola, soy <span class="gradient-text">Martín Acevedo</span>.<br>Construyo cosas para la <em>web</em>.</h1>
+          <p class="hero__lead reveal">
+            Me apasiona <strong class="typed-message" id="typed-message" aria-live="polite"></strong><span class="cursor">|</span>
+          </p>
+          <div class="hero__cta reveal">
+            <a href="#proyectos" class="btn btn--primary">Ver proyectos</a>
+            <a href="#contacto" class="btn btn--ghost">Contáctame</a>
+          </div>
+          <ul class="socials reveal">
+            <li><a href="https://github.com/repos?q=owner%3A%40me" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="www.linkedin.com/in/martin-acevedo-429742280" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="#">Correo</a></li>
+          </ul>
+        </div>
+
+        <div class="hero__visual reveal" aria-hidden="true">
+          <div class="code-window">
+            <div class="code-window__bar">
+              <i></i><i></i><i></i><span>portafolio.js</span>
+            </div>
+<pre><code><span class="code-keyword">const</span> <span class="code-variable">dev</span> = {
+  nombre: <span class="code-string">"Martín Acevedo"</span>,
+  rol: <span class="code-string">"Fullstack"</span>,
+  stack: [<span class="code-string">"HTML"</span>, <span class="code-string">"CSS"</span>, <span class="code-string">"JS"</span>],
+  aprendiendo: <span class="code-keyword">true</span>,
+  disponible: <span class="code-keyword">true</span>
+};
+
+<span class="code-function">contratar</span>(dev); <span class="code-comment">// listo para despegar</span></code></pre>
+          </div>
+          <div class="float-card float-card--a"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-8 12h6l-1 8 8-12h-6l1-8Z"></path></svg> Código limpio</div>
+          <div class="float-card float-card--b"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"></rect><path d="M9 18h6"></path></svg> 100% responsivo</div>
+        </div>
+      </div>
+
+      <div class="container stats reveal">
+        <div class="stat"><strong data-count="3">0</strong><span>Proyectos</span></div>
+        <div class="stat"><strong data-count="8">0</strong><span>Tecnologías</span></div>
+        <div class="stat"><strong data-count="120" data-suffix="+">0</strong><span>Commits</span></div>
+        <div class="stat"><strong data-count="100" data-suffix="%">0</strong><span>Ganas de aprender</span></div>
+      </div>
+    </section>
+
+    <!-- ============ FRANJA DE TECNOLOGÍAS ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__group"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Git</span><span>GitHub</span><span>Responsive</span><span>DOM</span></div>
+        <div class="marquee__group"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Git</span><span>GitHub</span><span>Responsive</span><span>DOM</span></div>
+      </div>
+    </div>
+
+    <!-- ============ SOBRE MÍ ============ -->
+    <section class="section" id="sobre-mi">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__num">01</span>
+          <h2>Sobre mí</h2>
+        </header>
+
+        <div class="about">
+          <div class="about__text reveal">
+            <p>
+              Soy <strong>Martín Acevedo</strong>, desarrollador fullstack y estudiante de desarrollo web en <strong>Skillnest</strong>.
+              Me gusta transformar ideas en aplicaciones claras, ordenadas y agradables de usar.
+              Aprendo construyendo soluciones completas: cada proyecto es una oportunidad para entender mejor el frontend, el backend y cómo se conectan.
+            </p>
+            <p>
+              Busco una oportunidad laboral o de práctica profesional como desarrollador fullstack, donde pueda aportar con entusiasmo,
+              aprender de un equipo y seguir creciendo en la creación de aplicaciones web completas.
+            </p>
+            <a href="#contacto" class="btn btn--ghost">Hablemos →</a>
+          </div>
+
+          <div class="about__cards">
+            <article class="about-card tilt-card reveal">
+              <span class="about-card__icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0M16 3l2 2"></path></svg></span>
+              <h3>Perfil</h3>
+              <p>Desarrollador fullstack, con conocimientos de HTML semántico, CSS moderno, JavaScript, Python y Flask.</p>
+            </article>
+            <article class="about-card tilt-card reveal">
+              <span class="about-card__icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="3"></circle><path d="m16 8 5-5M17 3h4v4"></path></svg></span>
+              <h3>Intereses</h3>
+              <p>Desarrollo de aplicaciones web, experiencia de usuario, accesibilidad, APIs y animaciones sutiles.</p>
+            </article>
+            <article class="about-card tilt-card reveal">
+              <span class="about-card__icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21V11M12 14c-4 0-7-2-7-7 5 0 7 3 7 7ZM12 11c0-4 3-7 7-7 0 5-3 7-7 7Z"></path></svg></span>
+              <h3>Aprendiendo</h3>
+              <p>Flask, creación de APIs, conexión entre frontend y backend, bases de datos y buenas prácticas con Git.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MI CAMINO ============ -->
+    <section class="section" id="camino">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__num">→</span>
+          <h2>Mi camino de aprendizaje</h2>
+        </header>
+        <div class="timeline">
+          <article class="learning-timeline__item reveal">
+            <span class="learning-timeline__label">Etapa 1</span>
+            <h3>HTML y CSS</h3>
+            <p>Aprendí a estructurar páginas y a darles estilo: maquetación, colores, tipografías y diseño responsivo.</p>
+          </article>
+          <article class="learning-timeline__item reveal">
+            <span class="learning-timeline__label">Etapa 2</span>
+            <h3>JavaScript y DOM</h3>
+            <p>Empecé a darle vida a mis páginas con eventos, funciones y manipulación de elementos.</p>
+          </article>
+          <article class="learning-timeline__item reveal">
+            <span class="learning-timeline__label">Etapa 3</span>
+            <h3>Git y GitHub</h3>
+            <p>Control de versiones, repositorios y publicación de mis proyectos en GitHub Pages.</p>
+          </article>
+          <article class="learning-timeline__item reveal">
+            <span class="learning-timeline__label">Hoy</span>
+            <h3>Este portafolio</h3>
+            <p>Reúno mis conocimientos de frontend y backend en un sitio propio, mientras sigo practicando y buscando oportunidades como desarrollador fullstack.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HABILIDADES ============ -->
+    <section class="section section--alt" id="habilidades">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__num">02</span>
+          <h2>Tecnologías y habilidades</h2>
+        </header>
+        <p class="section__intro reveal">Las herramientas que he aprendido y usado durante Skillnest.</p>
+
+        <div class="skills">
+          <article class="skill-card reveal" data-level="85">
+            <div class="skill__top"><span class="skill__badge skill-badge--html">&lt;/&gt;</span><h3>HTML5</h3><em>85%</em></div>
+            <div class="skill-progress"><i></i></div>
+            <p>Estructura semántica, formularios, multimedia y accesibilidad básica.</p>
+          </article>
+          <article class="skill-card reveal" data-level="80">
+            <div class="skill__top"><span class="skill__badge skill-badge--css">{ }</span><h3>CSS3</h3><em>80%</em></div>
+            <div class="skill-progress"><i></i></div>
+            <p>Flexbox, Grid, variables, animaciones y diseño responsivo.</p>
+          </article>
+          <article class="skill-card reveal" data-level="70">
+            <div class="skill__top"><span class="skill__badge skill-badge--javascript">JS</span><h3>JavaScript</h3><em>70%</em></div>
+            <div class="skill-progress"><i></i></div>
+            <p>DOM, eventos, funciones, arrays y lógica de interacción.</p>
+          </article>
+          <article class="skill-card reveal" data-level="75">
+            <div class="skill__top"><span class="skill__badge skill-badge--git">⎇</span><h3>Git</h3><em>75%</em></div>
+            <div class="skill-progress"><i></i></div>
+            <p>Commits, ramas, merge y control de versiones.</p>
+          </article>
+          <article class="skill-card reveal" data-level="75">
+            <div class="skill__top"><span class="skill__badge skill-badge--github">◉</span><h3>GitHub</h3><em>75%</em></div>
+            <div class="skill-progress"><i></i></div>
+            <p>Repositorios, README, colaboración y publicación con GitHub Pages.</p>
+          </article>
+          <article class="skill-card reveal" data-level="65">
+            <div class="skill__top"><span class="skill__badge skill-badge--python">Py</span><h3>Python</h3><em>65%</em></div>
+            <div class="skill-progress"><i></i></div>
+            <p>Sintaxis, estructuras de datos y desarrollo web con Flask para crear rutas, vistas y APIs.</p>
+          </article>
+        </div>
+
+        <div class="chips reveal" aria-label="Otras herramientas">
+          <span>VS Code</span><span>Chrome DevTools</span><span>Figma (básico)</span><span>Markdown</span><span>Responsive Design</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROYECTOS ============ -->
+    <section class="section" id="proyectos">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__num">03</span>
+          <h2>Proyectos</h2>
+        </header>
+        <p class="section__intro reveal">Una selección de lo que he construido. Haz clic en una tarjeta para ver más detalles.</p>
+
+        <div class="project-grid" id="project-grid"></div>
+      </div>
+    </section>
+
+    <!-- ============ EXTRAS ============ -->
+    <section class="section" id="extras">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__num">04</span>
+          <h2>Tareas y trabajos adicionales</h2>
+        </header>
+        <p class="section__intro reveal">Ejercicios y prácticas que también forman parte de mi aprendizaje.</p>
+
+        <div class="task-accordion reveal" id="task-accordion">
+          <article class="task-accordion__item">
+            <button class="task-accordion__trigger" aria-expanded="false">
+              <span>Ejercicios de Flexbox y Grid</span><i>+</i>
+            </button>
+            <div class="task-accordion__content">
+              <p>Práctica de maquetación con layouts en una y dos dimensiones, galerías y tarjetas adaptables.</p>
+              <a href="https://github.com/TU-USUARIO/REPO-EJERCICIOS" target="_blank" rel="noopener">Ver repositorio →</a>
+            </div>
+          </article>
+          <article class="task-accordion__item">
+            <button class="task-accordion__trigger" aria-expanded="false">
+              <span>Ejercicios de JavaScript y DOM</span><i>+</i>
+            </button>
+            <div class="task-accordion__content">
+              <p>Contadores, listas de tareas, validaciones de formularios y cambios de contenido con eventos.</p>
+              <a href="https://github.com/TU-USUARIO/REPO-JS" target="_blank" rel="noopener">Ver repositorio →</a>
+            </div>
+          </article>
+          <article class="task-accordion__item">
+            <button class="task-accordion__trigger" aria-expanded="false">
+              <span>Práctica de Git y GitHub</span><i>+</i>
+            </button>
+            <div class="task-accordion__content">
+              <p>Trabajo con ramas, resolución de conflictos, pull requests y publicación en GitHub Pages.</p>
+              <a href="https://github.com/TU-USUARIO" target="_blank" rel="noopener">Ver mi GitHub →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section class="section section--alt" id="contacto">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__num">05</span>
+          <h2>Contacto</h2>
+        </header>
+
+        <div class="contact">
+          <div class="contact__info reveal">
+            <h3>¿Trabajamos juntos?</h3>
+            <p>Estoy abierto a oportunidades laborales y de práctica como desarrollador fullstack. Escríbeme y conversemos.</p>
+            <ul class="contact__list">
+              <li><span>✉</span><a href="martinacevedo.@liceovvh.cl">martinacevedo.@liceovvh.cl</a></li>
+              <li><span>in</span><a href="https://www.linkedin.com/in/TU-PERFIL" target="_blank" rel="noopener">linkedin.com/in/tu-perfil</a></li>
+              <li><span>⌥</span><a href="https://github.com/TU-USUARIO" target="_blank" rel="noopener">github.com/tu-usuario</a></li>
+            </ul>
+          </div>
+
+          <form class="contact-form reveal" id="contact-form" novalidate>
+            <label>Nombre
+              <input type="text" id="contact-name" placeholder="Tu nombre" required>
+              <small class="form-error"></small>
+            </label>
+            <label>Correo
+              <input type="email" id="contact-email" placeholder="tu@correo.com" required>
+              <small class="form-error"></small>
+            </label>
+            <label>Mensaje
+              <textarea id="contact-message" rows="4" placeholder="Cuéntame en qué puedo ayudarte" required></textarea>
+              <small class="form-error"></small>
+            </label>
+            <button type="submit" class="btn btn--primary">Enviar mensaje</button>
+            <p class="form__status" id="contact-form-status" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__row">
+      <p>© <span id="current-year"></span> Martín Acevedo. Hecho con HTML, CSS, JavaScript, Python y Flask.</p>
+      <a href="#inicio">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Volver arriba">↑</button>
+
+  <!-- ============ MODAL ============ -->
+  <div class="project-modal" id="project-modal" aria-hidden="true">
+    <div class="project-modal__backdrop" data-close></div>
+    <div class="project-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+      <button class="project-modal__close" data-close aria-label="Cerrar">×</button>
+      <div class="project-modal__thumbnail" id="project-modal-thumbnail"></div>
+      <div class="project-modal__content">
+        <h3 id="project-modal-title"></h3>
+        <p id="project-modal-description"></p>
+        <div class="technology-tags" id="project-modal-tags"></div>
+        <div class="project-modal__links">
+          <a class="btn btn--primary" id="project-repository-link" target="_blank" rel="noopener">Ver repositorio →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="static/JS/script.js"></script>
+</body>
+</html>
