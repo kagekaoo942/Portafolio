@@ -288,7 +288,7 @@ h1, h2, h3 { font-family: "Fraunces", Georgia, serif; line-height: 1.15; letter-
 .task-accordion__content a { color: var(--accent); font-weight: 600; }
 
 /* ---------- Contacto ---------- */
-.contact { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 3rem; margin-top: 1.5rem; }
+.contact { margin-top: 1.5rem; }
 .contact__info h3 { font-size: 1.8rem; margin-bottom: 0.8rem; }
 .contact__info > p { color: var(--muted); margin-bottom: 1.6rem; }
 .contact__list li { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 0.9rem; }
@@ -296,21 +296,9 @@ h1, h2, h3 { font-family: "Fraunces", Georgia, serif; line-height: 1.15; letter-
   width: 40px; height: 40px; display: grid; place-items: center; border-radius: 12px;
   background: var(--surface); border: 1px solid var(--border); color: var(--accent); font-weight: 700;
 }
+.contact__icon { width: 22px; height: 22px; display: block; fill: currentColor; }
 .contact__list a { transition: color 0.2s; word-break: break-word; }
 .contact__list a:hover { color: var(--accent); }
-
-.contact-form { display: grid; gap: 1rem; padding: 1.8rem; background: var(--surface); border: 1px solid var(--border); border-radius: 22px; }
-.contact-form label { display: grid; gap: 0.35rem; font-size: 0.88rem; font-weight: 500; }
-.contact-form input, .contact-form textarea {
-  font: inherit; padding: 0.8rem 1rem; color: var(--text);
-  background: var(--bg); border: 1px solid var(--border); border-radius: 12px; resize: vertical;
-  transition: border-color 0.25s, box-shadow 0.25s;
-}
-.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px var(--glow-1); }
-.contact-form .invalid { border-color: #e5636b; }
-.form-error { color: #e5636b; font-size: 0.78rem; min-height: 1em; }
-.contact-form .btn { justify-self: start; }
-.form__status { color: var(--accent-2); font-size: 0.9rem; }
 
 /* ---------- Footer ---------- */
 .footer { padding: 2rem 0; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.88rem; }

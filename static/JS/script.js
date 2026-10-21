@@ -258,34 +258,5 @@ $$(".task-accordion__item").forEach(item => {
   });
 });
 
-/* ---------- 13. FORMULARIO (validación + mailto) ---------- */
-const form = $("#contact-form");
-const MY_EMAIL = "tu.correo@ejemplo.com"; // <- cambia por tu correo profesional
-
-function setError(input, msg) {
-  input.classList.toggle("invalid", !!msg);
-  input.parentElement.querySelector(".form-error").textContent = msg;
-}
-
-form.addEventListener("submit", e => {
-  e.preventDefault();
-  const name = $("#contact-name"), email = $("#contact-email"), msg = $("#contact-message");
-  let ok = true;
-
-  setError(name, name.value.trim().length < 2 ? "Escribe tu nombre." : "");
-  setError(email, /^\S+@\S+\.\S+$/.test(email.value) ? "" : "Ingresa un correo válido.");
-  setError(msg, msg.value.trim().length < 10 ? "El mensaje es muy corto (mín. 10 caracteres)." : "");
-  ok = ![name, email, msg].some(i => i.classList.contains("invalid"));
-  if (!ok) return;
-
-  const subject = encodeURIComponent(`Contacto desde tu portafolio – ${name.value.trim()}`);
-  const body = encodeURIComponent(`${msg.value.trim()}\n\n— ${name.value.trim()} (${email.value.trim()})`);
-  window.location.href = `mailto:${MY_EMAIL}?subject=${subject}&body=${body}`;
-
-  $("#contact-form-status").textContent = "¡Gracias! Se abrirá tu aplicación de correo para enviar el mensaje.";
-  form.reset();
-});
-$$("input, textarea", form).forEach(i => i.addEventListener("input", () => setError(i, "")));
-
-/* ---------- 14. AÑO DEL FOOTER ---------- */
+/* ---------- 13. AÑO DEL FOOTER ---------- */
 $("#current-year").textContent = new Date().getFullYear();
