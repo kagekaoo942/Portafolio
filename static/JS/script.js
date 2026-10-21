@@ -29,7 +29,7 @@ const projects = [
     gradient: "project-gradient--greenery",
     icon: "greenery",
     image: "",
-    repo: "https://radarverde.onrender.com"
+    repo: "https://github.com/kagekaoo942/RadarVerde"
   }
 ];
 
