@@ -11,7 +11,7 @@ const projects = [
     gradient: "project-gradient--library",
     icon: "library",
     image: "",
-    repo: "https://github.com/TU-USUARIO/biblioteca"
+    repo: "http://127.0.0.1:5501/libroteca_acevedo_martin/index.html"
   },
   {
     title: "Reserva de Películas en el Cine",
@@ -20,7 +20,7 @@ const projects = [
     gradient: "project-gradient--cinema",
     icon: "cinema",
     image: "",
-    repo: "https://github.com/TU-USUARIO/reserva-cine"
+    repo: "https://github.com/kagekaoo942/CinePedia"
   },
   {
     title: "Mapa de Áreas Verdes",
@@ -29,7 +29,7 @@ const projects = [
     gradient: "project-gradient--greenery",
     icon: "greenery",
     image: "",
-    repo: "https://github.com/TU-USUARIO/areas-verdes"
+    repo: "https://radarverde.onrender.com"
   }
 ];
 
@@ -102,7 +102,7 @@ $$(".reveal").forEach((el, i) => {
   el.style.transitionDelay = (i % 4) * 90 + "ms";
   revealObs.observe(el);
 });
-// Seguridad: el contenido del hero siempre debe verse
+// Seguridad: el contenido del inicio siempre debe verse
 setTimeout(() => $$("#inicio .reveal").forEach(el => el.classList.add("is-visible")), 1200);
 
 /* ---------- 6. EFECTO DE ESCRITURA ---------- */
