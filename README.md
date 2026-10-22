@@ -1,2 +1,2 @@
 # Portafolio
-Portafolio personal con mi informacion y proyectos.
+Portafolio personal con mi informacion, proyectos y certificaciones
