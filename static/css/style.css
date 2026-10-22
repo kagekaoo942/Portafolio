@@ -226,7 +226,11 @@ h1, h2, h3 { font-family: "Fraunces", Georgia, serif; line-height: 1.15; letter-
   font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 0.85rem; color: #fff;
 }
 .skill-badge--html { background: #e2683c; } .skill-badge--css { background: #3b82c4; } .skill-badge--javascript { background: #e8b923; color: #222; }
-.skill-badge--git { background: #d8573c; } .skill-badge--github { background: #4a5170; } .skill-badge--python { background: #3776ab; }
+.skill-badge--git { background: #d8573c; } .skill-badge--github { background: var(--surface-2); color: var(--accent); } .skill-badge--python { background: #3776ab; }
+.skill-badge--react { background: #61dafb; color: #17202a; }
+.skill-badge--mysql { background: #4479a1; color: #fff; } .skill-badge--vscode { background: var(--surface-2); color: #007acc; }
+.skill-icon { width: 1.2rem; height: 1.2rem; fill: currentColor; }
+.skill-badge--github .skill-icon { width: 1.2rem; height: 1.2rem; fill: #fff; }
 .skill-progress { height: 7px; background: var(--surface-2); border-radius: 999px; overflow: hidden; margin-bottom: 0.9rem; }
 .skill-progress i { display: block; height: 100%; width: 0; border-radius: 999px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); transition: width 1.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .skill-card p { color: var(--muted); font-size: 0.9rem; }
@@ -286,6 +290,9 @@ h1, h2, h3 { font-family: "Fraunces", Georgia, serif; line-height: 1.15; letter-
 .task-accordion__item.is-open .task-accordion__content { padding-bottom: 1.3rem; }
 .task-accordion__content p { color: var(--muted); margin-bottom: 0.6rem; }
 .task-accordion__content a { color: var(--accent); font-weight: 600; }
+.skillsbuild-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.skillsbuild-links a:nth-child(2) { text-align: center; }
+.skillsbuild-links a:last-child { text-align: right; }
 
 /* ---------- Contacto ---------- */
 .contact { margin-top: 1.5rem; }
@@ -475,6 +482,8 @@ body::before {
   .stats { grid-template-columns: repeat(2, 1fr); padding: 1.2rem; }
   .float-card { display: none; }
   .footer__row { flex-direction: column; text-align: center; }
+  .skillsbuild-links { grid-template-columns: 1fr; gap: 0.5rem; }
+  .skillsbuild-links a:nth-child(2), .skillsbuild-links a:last-child { text-align: left; }
 }
 
 @media (prefers-reduced-motion: reduce) {

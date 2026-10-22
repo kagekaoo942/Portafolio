@@ -7,16 +7,16 @@ const projects = [
   {
     title: "Biblioteca Digital",
     desc: "Sitio para explorar libros, consultar fichas y organizar una biblioteca digital de forma clara y sencilla.",
-    tech: ["HTML", "CSS"],
+    tech: ["HTML", "CSS", "JavaScript"],
     gradient: "project-gradient--library",
     icon: "library",
     image: "",
-    repo: "http://127.0.0.1:5501/libroteca_acevedo_martin/index.html"
+    repo: "https://github.com/kagekaoo942/libroteca"
   },
   {
     title: "Reserva de Películas en el Cine",
     desc: "Página para consultar películas, seleccionar una función y reservar entradas para una sesión de cine.",
-    tech: ["HTML", "CSS"],
+    tech: ["HTML", "CSS", "Python", "Flask"],
     gradient: "project-gradient--cinema",
     icon: "cinema",
     image: "",
@@ -25,7 +25,7 @@ const projects = [
   {
     title: "Mapa de Áreas Verdes",
     desc: "Aplicación para detectar y visualizar zonas con mayor o menor presencia de áreas verdes dentro de una ciudad.",
-    tech: ["Python", "Flask"],
+    tech: ["HTML", "CSS", "Python", "Flask"],
     gradient: "project-gradient--greenery",
     icon: "greenery",
     image: "",
@@ -90,18 +90,23 @@ const spy = new IntersectionObserver(entries => {
 }, { rootMargin: "-45% 0px -50% 0px" });
 sections.forEach(s => spy.observe(s));
 
-/* ---------- 5. ANIMACIÓN AL HACER SCROLL (reveal) ---------- */
-const revealObs = new IntersectionObserver((entries, obs) => {
-  entries.forEach(e => {
-    if (!e.isIntersecting) return;
-    e.target.classList.add("is-visible");
-    obs.unobserve(e.target);
-  });
-}, { threshold: 0.12 });
+/* ---------- 5. ANIMACIONES AL HACER SCROLL ---------- */
+function observeOnce(selector, onEnter, options) {
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      onEnter(entry.target);
+      obs.unobserve(entry.target);
+    });
+  }, options);
+
+  $$(selector).forEach(element => observer.observe(element));
+}
+
 $$(".reveal").forEach((el, i) => {
   el.style.transitionDelay = (i % 4) * 90 + "ms";
-  revealObs.observe(el);
 });
+observeOnce(".reveal", el => el.classList.add("is-visible"), { threshold: 0.12 });
 // Seguridad: el contenido del inicio siempre debe verse
 setTimeout(() => $$("#inicio .reveal").forEach(el => el.classList.add("is-visible")), 1200);
 
@@ -127,34 +132,25 @@ function type() {
 type();
 
 /* ---------- 7. CONTADORES ---------- */
-const counterObs = new IntersectionObserver((entries, obs) => {
-  entries.forEach(e => {
-    if (!e.isIntersecting) return;
-    const el = e.target;
-    const target = +el.dataset.count;
-    const suffix = el.dataset.suffix || "";
-    const start = performance.now();
-    const dur = 1500;
-    (function step(now) {
-      const t = Math.min((now - start) / dur, 1);
-      const eased = 1 - Math.pow(1 - t, 3);
-      el.textContent = Math.round(target * eased) + suffix;
-      if (t < 1) requestAnimationFrame(step);
-    })(start);
-    obs.unobserve(el);
-  });
+observeOnce("[data-count]", el => {
+  const target = Number(el.dataset.count);
+  const suffix = el.dataset.suffix || "";
+  const start = performance.now();
+
+  function updateCounter(now) {
+    const progress = Math.min((now - start) / 1500, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(target * eased) + suffix;
+    if (progress < 1) requestAnimationFrame(updateCounter);
+  }
+
+  requestAnimationFrame(updateCounter);
 }, { threshold: 0.6 });
-$$("[data-count]").forEach(el => counterObs.observe(el));
 
 /* ---------- 8. BARRAS DE HABILIDADES ---------- */
-const skillObs = new IntersectionObserver((entries, obs) => {
-  entries.forEach(e => {
-    if (!e.isIntersecting) return;
-    $(".skill-progress i", e.target).style.width = e.target.dataset.level + "%";
-    obs.unobserve(e.target);
-  });
+observeOnce(".skill-card", card => {
+  $(".skill-progress i", card).style.width = card.dataset.level + "%";
 }, { threshold: 0.4 });
-$$(".skill-card").forEach(s => skillObs.observe(s));
 
 /* ---------- 9. PROYECTOS: render + modal ---------- */
 const grid = $("#project-grid");
