@@ -244,6 +244,9 @@ h1, h2, h3 { font-family: "Fraunces", Georgia, serif; line-height: 1.15; letter-
 
 /* ---------- Proyectos ---------- */
 .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+@media (min-width: 961px) {
+  .project-card:nth-child(4):last-child { grid-column: 2; }
+}
 .project-card {
   display: flex; flex-direction: column; text-align: left; overflow: hidden;
   background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
@@ -268,6 +271,7 @@ h1, h2, h3 { font-family: "Fraunces", Georgia, serif; line-height: 1.15; letter-
 .project-gradient--cinema { background: linear-gradient(135deg, #3b4a8f, #6fcfbf); }
 .project-gradient--library { background: linear-gradient(135deg, #c9651a, #f2a65a); }
 .project-gradient--greenery { background: linear-gradient(135deg, #2f7d5b, #a5d96f); }
+.project-gradient--teddy { background: linear-gradient(135deg, #8b5cf6, #ec4899); }
 
 .project-card__body { padding: 1.3rem 1.4rem 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
 .project-card__body h3 { font-size: 1.25rem; }

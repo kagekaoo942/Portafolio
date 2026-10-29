@@ -30,6 +30,15 @@ const projects = [
     icon: "greenery",
     image: "",
     repo: "https://github.com/kagekaoo942/RadarVerde"
+  },
+  {
+    title: "Donación de Peluches",
+    desc: "Plataforma web para donar peluches a otras personas, facilitando el registro y la adopción solidaria.",
+    tech: ["HTML", "CSS", "Python", "Flask"],
+    gradient: "project-gradient--teddy",
+    icon: "teddy",
+    image: "",
+    repo: "https://github.com/kagekaoo942/donacion_peluches"
   }
 ];
 
@@ -160,7 +169,8 @@ function thumbHTML(p) {
   const icons = {
     library: '<svg class="project-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 10h28v28H8z"></path><path d="M13 10v28M18 10v28M24 10v28M30 10v28M36 10v28"></path><path d="M8 15h28M8 33h28"></path></svg>',
     cinema: '<svg class="project-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 16h28v22H10z"></path><path d="m10 16 4-7 6 4 4-7 6 4 4-7 4 7v6"></path><path d="M10 23h28"></path><path d="m20 27 10 5-10 5z"></path></svg>',
-    greenery: '<svg class="project-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 36h32M12 36V14h24v22"></path><path d="M16 14V9h16v5M20 36V25h8v11"></path><path d="M34 24c-7 0-10-4-10-10 7 0 10 4 10 10ZM34 24c4-1 6-4 6-8-4 0-6 2-6 8Z"></path></svg>'
+    greenery: '<svg class="project-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 36h32M12 36V14h24v22"></path><path d="M16 14V9h16v5M20 36V25h8v11"></path><path d="M34 24c-7 0-10-4-10-10 7 0 10 4 10 10ZM34 24c4-1 6-4 6-8-4 0-6 2-6 8Z"></path></svg>',
+    teddy: '<svg class="project-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="15" cy="17" r="5"></circle><circle cx="33" cy="17" r="5"></circle><circle cx="24" cy="28" r="13"></circle><ellipse cx="24" cy="31" rx="5.5" ry="4"></ellipse><path d="M22.5 30h3M24 31v2.5"></path><circle cx="19" cy="25" r="1.5" fill="currentColor"></circle><circle cx="29" cy="25" r="1.5" fill="currentColor"></circle></svg>'
   };
   return `<div class="project-thumbnail ${p.gradient}">${img}${p.image ? "" : `<span>${icons[p.icon]}</span>`}</div>`;
 }
