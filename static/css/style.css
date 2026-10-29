@@ -228,7 +228,7 @@ h1, h2, h3 { font-family: "Fraunces", Georgia, serif; line-height: 1.15; letter-
 .skill-badge--html { background: #e2683c; } .skill-badge--css { background: #3b82c4; } .skill-badge--javascript { background: #e8b923; color: #222; }
 .skill-badge--git { background: #d8573c; } .skill-badge--github { background: var(--surface-2); color: var(--accent); } .skill-badge--python { background: #3776ab; }
 .skill-badge--react { background: #61dafb; color: #17202a; }
-.skill-badge--mysql { background: #4479a1; color: #fff; } .skill-badge--vscode { background: var(--surface-2); color: #007acc; }
+.skill-badge--mysql { background: #4479a1; color: #fff; } .skill-badge--vscode { background: var(--surface-2); color: #007acc; } .skill-badge--flask { background: #000000; color: #fff; border: 1px solid var(--border); }
 .skill-icon { width: 1.2rem; height: 1.2rem; fill: currentColor; }
 .skill-badge--github .skill-icon { width: 1.2rem; height: 1.2rem; fill: #fff; }
 .skill-progress { height: 7px; background: var(--surface-2); border-radius: 999px; overflow: hidden; margin-bottom: 0.9rem; }
